@@ -1,0 +1,520 @@
+{
+  "system": {
+    "id": "SYS-SYNTHETIC-CUSTOMS-01",
+    "name": "Synthetic Customs Business Ecosystem",
+    "name_ar": "منظومة العمل الجمركي التجريبية (Impact Analyzer)",
+    "environment": "synthetic-demo",
+    "synthetic": true,
+    "notice": "All modules and relationships are fictional demo constructs inspired by publicly documented business capabilities. They are not an extracted or verified Al-Nadeeb architecture."
+  },
+  "components": [
+    {
+      "id": "MOD-01",
+      "name": "Declaration Management",
+      "name_ar": "إدارة البيان الجمركي",
+      "type": "service",
+      "api_component": "Declaration Core API",
+      "database_asset": "Dec_DB.dbo",
+      "powerbi_report": "Clearance KPI Dashboard",
+      "uat_scenario": "Validate Declaration lifecycle status transitions (Draft → Submitted → Released)",
+      "aliases": [
+        "إدارة البيان الجمركي",
+        "خدمة البيان الجمركي",
+        "البيان الجمركي",
+        "declaration service",
+        "declaration management",
+        "customs declaration",
+        "إنشاء البيان",
+        "تقديم البيان"
+      ],
+      "description": "إنشاء بيانات البيان الجمركي وإدارتها ومتابعة حالتها."
+    },
+    {
+      "id": "MOD-02",
+      "name": "Declaration Validation",
+      "name_ar": "التحقق من صحة البيان",
+      "type": "service",
+      "api_component": "Validate API",
+      "database_asset": "Dec_Validation_DB",
+      "powerbi_report": "Validation Rejections Report",
+      "uat_scenario": "Verify mandatory field & pre-release validation rules block incomplete declarations",
+      "aliases": [
+        "التحقق من البيان",
+        "التحقق من صحة البيان",
+        "قواعد التحقق",
+        "declaration validation",
+        "validation rules",
+        "validate declaration",
+        "validation status"
+      ],
+      "description": "فحص اكتمال البيانات وتطبيق قواعد التحقق قبل الانتقال للخطوات التالية."
+    },
+    {
+      "id": "MOD-03",
+      "name": "Item & Goods Management",
+      "name_ar": "إدارة الأصناف والبضائع",
+      "type": "service",
+      "api_component": "Goods & Items API",
+      "database_asset": "Goods_Items_DB",
+      "powerbi_report": "Commodity Volume Dashboard",
+      "uat_scenario": "Assert item quantities, net/gross weights, and unit conversions persist accurately",
+      "aliases": [
+        "إدارة الأصناف والبضائع",
+        "تفاصيل البضائع",
+        "الأصناف",
+        "item management",
+        "goods management",
+        "declaration items"
+      ],
+      "description": "إدارة بنود البيان والأصناف والكميات والأوزان والتفاصيل."
+    },
+    {
+      "id": "MOD-04",
+      "name": "Customs Tariff",
+      "name_ar": "التعرفة الجمركية",
+      "type": "rules_engine",
+      "api_component": "Tariff Calc API",
+      "database_asset": "Tariff_DB",
+      "powerbi_report": "Revenue Dashboard",
+      "uat_scenario": "Verify 8-digit HS Code duty calculation and exemption rules on updated items",
+      "aliases": [
+        "التعرفة الجمركية",
+        "إدارة التعرفة",
+        "البند الجمركي",
+        "customs tariff",
+        "tariff management",
+        "hs code"
+      ],
+      "description": "تطبيق قواعد التعرفة والتصنيف الجمركي على الأصناف."
+    },
+    {
+      "id": "MOD-05",
+      "name": "Customs Valuation",
+      "name_ar": "القيمة الجمركية",
+      "type": "rules_engine",
+      "api_component": "Valuation Engine API",
+      "database_asset": "Valuation_DB",
+      "powerbi_report": "Declared Value Analytics",
+      "uat_scenario": "Confirm CIF/FOB valuation thresholds and currency exchange rate calculations",
+      "aliases": [
+        "القيمة الجمركية",
+        "تقييم القيمة",
+        "التقييم الجمركي",
+        "customs valuation",
+        "valuation engine"
+      ],
+      "description": "تقييم القيمة الجمركية وربطها ببيانات المعاملة."
+    },
+    {
+      "id": "MOD-06",
+      "name": "Risk Management",
+      "name_ar": "إدارة المخاطر",
+      "type": "rules_engine",
+      "api_component": "Assess Risk API",
+      "database_asset": "Risk_Model",
+      "powerbi_report": "Risk Scoring Dashboard",
+      "uat_scenario": "Assert Risk scoring rules evaluate updated declaration attributes without latency",
+      "aliases": [
+        "إدارة المخاطر",
+        "تقييم المخاطر",
+        "محرك المخاطر",
+        "risk management",
+        "risk engine",
+        "risk assessment"
+      ],
+      "description": "تقييم مؤشرات المخاطر وتحديد مستوى المراجعة المطلوب."
+    },
+    {
+      "id": "MOD-07",
+      "name": "Selectivity Management",
+      "name_ar": "إدارة الانتقائية",
+      "type": "rules_engine",
+      "api_component": "Selectivity Routing API",
+      "database_asset": "Selectivity_DB",
+      "powerbi_report": "Channel Routing BI",
+      "uat_scenario": "Validate Green/Yellow/Red lane routing matches updated Risk Engine scores",
+      "aliases": [
+        "إدارة الانتقائية",
+        "الانتقائية",
+        "نظام الانتقائية",
+        "selectivity management",
+        "selectivity engine"
+      ],
+      "description": "تحديد مسار المعالجة وفق قواعد الانتقائية."
+    },
+    {
+      "id": "MOD-08",
+      "name": "Inspection Management",
+      "name_ar": "إدارة التفتيش",
+      "type": "workflow",
+      "api_component": "Inspection Workflow API",
+      "database_asset": "Inspection_DB",
+      "powerbi_report": "Inspection SLA & Seizures",
+      "uat_scenario": "Confirm physical inspection assignment and release hold clearance workflow",
+      "aliases": [
+        "إدارة التفتيش",
+        "التفتيش الجمركي",
+        "المعاينة",
+        "inspection management",
+        "customs inspection"
+      ],
+      "description": "تنظيم إجراءات التفتيش والمعاينة ونتائجها."
+    },
+    {
+      "id": "MOD-09",
+      "name": "Customs Payments",
+      "name_ar": "المدفوعات الجمركية",
+      "type": "service",
+      "api_component": "Payment Gateway API",
+      "database_asset": "Payments_Ledger_DB",
+      "powerbi_report": "Duty Collection BI",
+      "uat_scenario": "Verify duty fee generation, e-payment settlement, and receipt reconciliation",
+      "aliases": [
+        "المدفوعات الجمركية",
+        "الدفع الإلكتروني",
+        "الرسوم الجمركية",
+        "customs payments",
+        "payment service"
+      ],
+      "description": "إدارة الرسوم والمدفوعات وحالة السداد."
+    },
+    {
+      "id": "MOD-10",
+      "name": "Manifest Management",
+      "name_ar": "إدارة المنافيست",
+      "type": "service",
+      "api_component": "Manifest Ingestion API",
+      "database_asset": "Manifest_DB",
+      "powerbi_report": "Cargo Arrivals Dashboard",
+      "uat_scenario": "Validate air/sea cargo manifest cross-matching against submitted declarations",
+      "aliases": [
+        "إدارة المنافيست",
+        "بيان الحمولة",
+        "إدارة بيانات الحمولة",
+        "manifest management",
+        "cargo manifest"
+      ],
+      "description": "استقبال وإدارة بيانات الحمولة والمنافيست."
+    },
+    {
+      "id": "MOD-11",
+      "name": "Warehouse Management",
+      "name_ar": "إدارة المستودعات",
+      "type": "service",
+      "api_component": "Warehouse Stock API",
+      "database_asset": "Warehouse_DB",
+      "powerbi_report": "Bonded Storage Dashboard",
+      "uat_scenario": "Verify bonded warehouse gate-in/gate-out updates after inspection completion",
+      "aliases": [
+        "إدارة المستودعات",
+        "المستودعات الجمركية",
+        "البضائع المحجوزة",
+        "warehouse management",
+        "customs warehouse"
+      ],
+      "description": "متابعة البضائع والمستودعات والحالات المرتبطة بها."
+    },
+    {
+      "id": "MOD-12",
+      "name": "Shipping Integration",
+      "name_ar": "تكامل الشحن",
+      "type": "integration",
+      "api_component": "Carrier EDI / B2B API",
+      "database_asset": "EDI_Gateway_DB",
+      "powerbi_report": "Port Carrier SLA Report",
+      "uat_scenario": "Test shipping line EDI message schema compatibility and retry handling",
+      "aliases": [
+        "تكامل الشحن",
+        "الخطوط الملاحية",
+        "وكيل الشحن",
+        "shipping integration",
+        "shipping line",
+        "freight forwarder"
+      ],
+      "description": "تبادل بيانات الشحن مع الخطوط الملاحية ووكلاء الشحن."
+    },
+    {
+      "id": "MOD-13",
+      "name": "Government Integration",
+      "name_ar": "التكامل الحكومي",
+      "type": "integration",
+      "api_component": "OGA Approval API",
+      "database_asset": "Approval_DB",
+      "powerbi_report": "SLA Report",
+      "uat_scenario": "Confirm Government Integration approval timeout rules and permit sync",
+      "aliases": [
+        "التكامل الحكومي",
+        "الجهات الحكومية",
+        "موافقات الجهات",
+        "government integration",
+        "government agencies",
+        "oga integration"
+      ],
+      "description": "تبادل الطلبات والموافقات مع الجهات الحكومية."
+    },
+    {
+      "id": "MOD-14",
+      "name": "Post Clearance Audit",
+      "name_ar": "التدقيق اللاحق",
+      "type": "workflow",
+      "api_component": "PCA Audit Case API",
+      "database_asset": "Audit_Archive_DB",
+      "powerbi_report": "Post-Clearance Compliance BI",
+      "uat_scenario": "Verify released declarations remain immutable and auditable in PCA history",
+      "aliases": [
+        "التدقيق اللاحق",
+        "التدقيق بعد الإفراج",
+        "مراجعة ما بعد التخليص",
+        "post clearance audit",
+        "post clearance"
+      ],
+      "description": "تنفيذ المراجعات والتدقيق بعد إتمام التخليص."
+    },
+    {
+      "id": "MOD-15",
+      "name": "Customs Reporting",
+      "name_ar": "التقارير الجمركية",
+      "type": "analytics",
+      "api_component": "Analytics ETL Pipeline",
+      "database_asset": "Customs_DWH",
+      "powerbi_report": "Customs Reporting Executive BI",
+      "uat_scenario": "Regression test 'Customs Reporting' Power BI datasets and KPI aggregations",
+      "aliases": [
+        "التقارير الجمركية",
+        "التقارير الإحصائية",
+        "التقارير الرقابية",
+        "لوحات المؤشرات الجمركية",
+        "customs reporting",
+        "customs dashboard",
+        "customs analytics"
+      ],
+      "description": "تجميع البيانات التشغيلية وإنتاج التقارير والمؤشرات."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "MOD-10",
+      "to": "MOD-01",
+      "type": "SUPPLIES_DECLARATION_DATA",
+      "verb_en": "FEEDS",
+      "label": "يغذي بيانات البيان",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "upstream_feed",
+      "base_weight": 1,
+      "strategy_note": "تغذية قبلية من المنافيست إلى البيان"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-02",
+      "type": "VALIDATED_BY",
+      "verb_en": "CALLS",
+      "label": "يخضع للتحقق",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "synchronous_blocking",
+      "base_weight": 3,
+      "strategy_note": "استدعاء متزامن حرج للتحقق قبل الانتقال"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-03",
+      "type": "CONTAINS_ITEMS",
+      "verb_en": "READS",
+      "label": "يحتوي الأصناف",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "data_dependency",
+      "base_weight": 2,
+      "strategy_note": "اعتماد هيكلي على بنود وأصناف البيان"
+    },
+    {
+      "from": "MOD-03",
+      "to": "MOD-04",
+      "type": "CLASSIFIED_BY",
+      "verb_en": "CALLS",
+      "label": "يصنف وفق التعرفة",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "synchronous_blocking",
+      "base_weight": 2,
+      "strategy_note": "استدعاء محرك التعرفة لحساب الرسوم"
+    },
+    {
+      "from": "MOD-03",
+      "to": "MOD-05",
+      "type": "VALUED_BY",
+      "verb_en": "CALLS",
+      "label": "يخضع لتقييم القيمة",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "synchronous_blocking",
+      "base_weight": 2,
+      "strategy_note": "استدعاء محرك التقييم الجمركي"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-06",
+      "type": "ASSESSED_BY",
+      "verb_en": "CALLS",
+      "label": "يخضع لتقييم المخاطر",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "synchronous_blocking",
+      "base_weight": 3,
+      "strategy_note": "استدعاء متزامن لتقييم المخاطر أثناء المعالجة"
+    },
+    {
+      "from": "MOD-06",
+      "to": "MOD-07",
+      "type": "DRIVES_SELECTIVITY",
+      "verb_en": "DRIVES",
+      "label": "يوجه الانتقائية",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "state_mutation",
+      "base_weight": 2,
+      "strategy_note": "تحديث مسارات الانتقائية (أخضر/أصفر/أحمر)"
+    },
+    {
+      "from": "MOD-07",
+      "to": "MOD-08",
+      "type": "ROUTES_TO_INSPECTION",
+      "verb_en": "ROUTES",
+      "label": "يوجه التفتيش",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "synchronous_blocking",
+      "base_weight": 3,
+      "strategy_note": "توجيه مسار التفتيش الإلزامي"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-09",
+      "type": "GENERATES_PAYMENT",
+      "verb_en": "FEEDS",
+      "label": "ينشئ مستحقات الدفع",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "state_mutation",
+      "base_weight": 2,
+      "strategy_note": "توليد قيود ومستحقات السداد الجمركي"
+    },
+    {
+      "from": "MOD-12",
+      "to": "MOD-10",
+      "type": "SENDS_MANIFEST",
+      "verb_en": "FEEDS",
+      "label": "يرسل بيانات الحمولة",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "upstream_feed",
+      "base_weight": 1,
+      "strategy_note": "استقبال بيانات الشحن قبل إنشاء البيان"
+    },
+    {
+      "from": "MOD-08",
+      "to": "MOD-11",
+      "type": "UPDATES_WAREHOUSE",
+      "verb_en": "UPDATES",
+      "label": "يحدث بيانات المستودع",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "state_mutation",
+      "base_weight": 2,
+      "strategy_note": "تحديث حالة المخزون والإفراج بالمستودع"
+    },
+    {
+      "from": "MOD-13",
+      "to": "MOD-02",
+      "type": "PROVIDES_EXTERNAL_APPROVALS",
+      "verb_en": "FEEDS",
+      "label": "يوفر الموافقات الخارجية",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "integration_gate",
+      "base_weight": 2,
+      "strategy_note": "بوابة موافقات الجهات الحكومية الخارجية"
+    },
+    {
+      "from": "MOD-02",
+      "to": "MOD-01",
+      "type": "RETURNS_VALIDATION_RESULT",
+      "verb_en": "RETURNS",
+      "label": "يعيد نتيجة التحقق",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "state_mutation",
+      "base_weight": 2,
+      "strategy_note": "إعادة حالة القبول أو الرفض للبيان"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-14",
+      "type": "AUDITED_AFTER_CLEARANCE",
+      "verb_en": "FEEDS",
+      "label": "يخضع للتدقيق اللاحق",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "async_observer",
+      "base_weight": 1,
+      "strategy_note": "أرشفة وتدقيق لاحق غير معطّل للتخليص"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-15",
+      "type": "FEEDS_REPORTING",
+      "verb_en": "FEEDS",
+      "label": "يغذي التقارير",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "async_analytics",
+      "base_weight": 1,
+      "strategy_note": "تغذية مستودع البيانات ولوحات Power BI"
+    },
+    {
+      "from": "MOD-09",
+      "to": "MOD-15",
+      "type": "FEEDS_REPORTING",
+      "verb_en": "FEEDS",
+      "label": "يغذي التقارير المالية",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "async_analytics",
+      "base_weight": 1,
+      "strategy_note": "تغذية مستودع البيانات ولوحات Power BI"
+    },
+    {
+      "from": "MOD-08",
+      "to": "MOD-15",
+      "type": "FEEDS_REPORTING",
+      "verb_en": "FEEDS",
+      "label": "يغذي التقارير التشغيلية",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "async_analytics",
+      "base_weight": 1,
+      "strategy_note": "تغذية مستودع البيانات ولوحات Power BI"
+    },
+    {
+      "from": "MOD-14",
+      "to": "MOD-15",
+      "type": "FEEDS_REPORTING",
+      "verb_en": "FEEDS",
+      "label": "يغذي التقارير الرقابية",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط",
+      "coupling": "async_analytics",
+      "base_weight": 1,
+      "strategy_note": "تغذية مستودع البيانات ولوحات Power BI"
+    }
+  ],
+  "metadata": {
+    "version": "13.0",
+    "component_count": 15,
+    "relationship_count": 18,
+    "last_updated": "2026-11-15",
+    "provenance": "Synthetic demonstration data; no production system information.",
+    "strategy_model": "Coupling + Intent/Risk Triggers + Hop Attenuation + Upstream Boundary Detection"
+  }
+}

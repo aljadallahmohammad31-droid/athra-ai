@@ -1,0 +1,79 @@
+{
+  "repository": "NASJ System Knowledge Repository",
+  "environment": "DEMO",
+  "analysis_method": "Exact-name matching and relationship traversal",
+  "result_count": 2,
+  "results": [
+    {
+      "requirement_id": "REQ-001",
+      "requirement_text": "The system must validate declaration status before release.",
+      "matched_components": [],
+      "impacted_components": [],
+      "analysis_status": "NO_EXACT_COMPONENT_MATCH",
+      "review_required": true
+    },
+    {
+      "requirement_id": "REQ-002",
+      "requirement_text": "Declaration Service | Add status validation",
+      "matched_components": [
+        {
+          "id": "CMP-001",
+          "name": "Declaration Service",
+          "type": "service"
+        }
+      ],
+      "impacted_components": [
+        {
+          "id": "CMP-002",
+          "name": "Release Validation API",
+          "type": "api",
+          "impact_type": "DIRECT",
+          "distance": 1,
+          "relationship": "CALLS",
+          "reason": "Declaration Service calls the validation API",
+          "path": [
+            "CMP-001",
+            "CMP-002"
+          ]
+        },
+        {
+          "id": "CMP-003",
+          "name": "Declaration Database",
+          "type": "database",
+          "impact_type": "INDIRECT",
+          "distance": 2,
+          "relationship": "READS",
+          "reason": "Validation API reads declaration status",
+          "path": [
+            "CMP-001",
+            "CMP-002",
+            "CMP-003"
+          ]
+        },
+        {
+          "id": "CMP-004",
+          "name": "Release Time Dashboard",
+          "type": "report",
+          "impact_type": "INDIRECT",
+          "distance": 3,
+          "relationship": "FEEDS",
+          "reason": "Declaration data feeds the release dashboard",
+          "path": [
+            "CMP-001",
+            "CMP-002",
+            "CMP-003",
+            "CMP-004"
+          ]
+        }
+      ],
+      "analysis_status": "MATCH_FOUND",
+      "review_required": true
+    }
+  ],
+  "limitations": [
+    "Only explicit component names and aliases are matched.",
+    "Relationship direction follows the source-to-target definition.",
+    "Missing relationships cannot be discovered automatically.",
+    "Results require human validation and are not production decisions."
+  ]
+}

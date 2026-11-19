@@ -1,0 +1,200 @@
+{
+  "documents": [
+    {
+      "filename": "BRD_AR_01_تحقق_حالة_التصريح.docx",
+      "extracted_items": 15
+    }
+  ],
+  "findings": [
+    {
+      "id": "ITEM-001",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 1",
+      "text": "وثيقة متطلبات الأعمال",
+      "requirement_candidate": true,
+      "business_rule_candidate": false,
+      "risk_indicators": [],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-002",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 2",
+      "text": "اختبار 01 — تحقق حالة التصريح",
+      "requirement_candidate": false,
+      "business_rule_candidate": false,
+      "risk_indicators": [],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-003",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 3",
+      "text": "الحالة: بيانات اصطناعية للاختبار فقط — النسخة 1.0",
+      "requirement_candidate": false,
+      "business_rule_candidate": false,
+      "risk_indicators": [],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-004",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 4",
+      "text": "الهدف",
+      "requirement_candidate": false,
+      "business_rule_candidate": false,
+      "risk_indicators": [],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-005",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 5",
+      "text": "يجب على النظام التحقق من حالة التصريح قبل الإفراج. يجب رفض الإفراج إذا كانت الحالة غير معتمدة وتسجيل سبب الرفض ووقت المحاولة.",
+      "requirement_candidate": true,
+      "business_rule_candidate": true,
+      "risk_indicators": [
+        "غير معتمدة"
+      ],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-006",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 6",
+      "text": "المتطلبات",
+      "requirement_candidate": true,
+      "business_rule_candidate": false,
+      "risk_indicators": [],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-007",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 7",
+      "text": "REQ-001: يجب التحقق من حالة التصريح قبل الإفراج.",
+      "requirement_candidate": true,
+      "business_rule_candidate": true,
+      "risk_indicators": [],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-008",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 8",
+      "text": "REQ-002: يجب منع الإفراج عند نقص البيانات الإلزامية.",
+      "requirement_candidate": true,
+      "business_rule_candidate": true,
+      "risk_indicators": [
+        "منع"
+      ],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-009",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 9",
+      "text": "REQ-003: يجب تسجيل نتيجة التحقق ومرجع التصريح.",
+      "requirement_candidate": true,
+      "business_rule_candidate": true,
+      "risk_indicators": [],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-010",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 10",
+      "text": "المكونات",
+      "requirement_candidate": false,
+      "business_rule_candidate": false,
+      "risk_indicators": [],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-011",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 11",
+      "text": "المكونات الاصطناعية: Declaration Service وRelease Validation API وDeclaration Database.",
+      "requirement_candidate": false,
+      "business_rule_candidate": true,
+      "risk_indicators": [],
+      "matched_components": [
+        {
+          "id": "C1",
+          "name": "Declaration Service",
+          "evidence": "Declaration Service",
+          "confidence": "مرتفع"
+        },
+        {
+          "id": "C2",
+          "name": "Release Validation API",
+          "evidence": "Release Validation API",
+          "confidence": "مرتفع"
+        },
+        {
+          "id": "C3",
+          "name": "Declaration Database",
+          "evidence": "Declaration Database",
+          "confidence": "مرتفع"
+        }
+      ],
+      "candidate_impacts": [
+        {
+          "component_id": "C4",
+          "component": "Release Time Dashboard",
+          "distance": 1,
+          "kind": "مباشر",
+          "relationship": "يغذي البيانات إلى",
+          "path": [
+            "Declaration Database",
+            "Release Time Dashboard"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ITEM-012",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — فقرة 12",
+      "text": "ملاحظة: هذه الوثيقة مصطنعة ولا تمثل نظامًا حقيقيًا أو بيانات عميل.",
+      "requirement_candidate": false,
+      "business_rule_candidate": false,
+      "risk_indicators": [],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-013",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — جدول 1، صف 1",
+      "text": "المعرف | الوصف | الأولوية",
+      "requirement_candidate": false,
+      "business_rule_candidate": false,
+      "risk_indicators": [],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-014",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — جدول 1، صف 2",
+      "text": "REQ-001 | التحقق من الحالة | حرجة",
+      "requirement_candidate": true,
+      "business_rule_candidate": true,
+      "risk_indicators": [
+        "حرجة"
+      ],
+      "matched_components": [],
+      "candidate_impacts": []
+    },
+    {
+      "id": "ITEM-015",
+      "source": "BRD_AR_01_تحقق_حالة_التصريح.docx — جدول 1، صف 3",
+      "text": "REQ-002 | منع الحالات غير المعتمدة | عالية",
+      "requirement_candidate": true,
+      "business_rule_candidate": true,
+      "risk_indicators": [
+        "منع"
+      ],
+      "matched_components": [],
+      "candidate_impacts": []
+    }
+  ],
+  "repository_notice": "مستودع تجريبي اصطناعي؛ لا يمثل نظامًا حقيقيًا"
+}

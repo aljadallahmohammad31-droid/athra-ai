@@ -1,0 +1,370 @@
+{
+  "system": {
+    "id": "SYS-SYNTHETIC-CUSTOMS-01",
+    "name": "Synthetic Customs Business Ecosystem",
+    "environment": "synthetic-demo",
+    "synthetic": true,
+    "notice": "All modules and relationships are fictional demo constructs inspired by publicly documented business capabilities. They are not an extracted or verified Al-Nadeeb architecture."
+  },
+  "components": [
+    {
+      "id": "MOD-01",
+      "name": "Declaration Management",
+      "type": "service",
+      "aliases": [
+        "إدارة البيان الجمركي",
+        "خدمة البيان الجمركي",
+        "البيان الجمركي",
+        "declaration service",
+        "declaration management",
+        "customs declaration",
+        "إنشاء البيان",
+        "تقديم البيان"
+      ],
+      "description": "إنشاء بيانات البيان الجمركي وإدارتها ومتابعة حالتها."
+    },
+    {
+      "id": "MOD-02",
+      "name": "Declaration Validation",
+      "type": "service",
+      "aliases": [
+        "التحقق من البيان",
+        "التحقق من صحة البيان",
+        "قواعد التحقق",
+        "declaration validation",
+        "validation rules",
+        "validate declaration"
+      ],
+      "description": "فحص اكتمال البيانات وتطبيق قواعد التحقق قبل الانتقال للخطوات التالية."
+    },
+    {
+      "id": "MOD-03",
+      "name": "Item & Goods Management",
+      "type": "service",
+      "aliases": [
+        "إدارة الأصناف والبضائع",
+        "تفاصيل البضائع",
+        "الأصناف",
+        "item management",
+        "goods management",
+        "declaration items"
+      ],
+      "description": "إدارة بنود البيان والأصناف والكميات والأوزان والتفاصيل."
+    },
+    {
+      "id": "MOD-04",
+      "name": "Customs Tariff",
+      "type": "rules_engine",
+      "aliases": [
+        "التعرفة الجمركية",
+        "إدارة التعرفة",
+        "البند الجمركي",
+        "customs tariff",
+        "tariff management",
+        "hs code"
+      ],
+      "description": "تطبيق قواعد التعرفة والتصنيف الجمركي على الأصناف."
+    },
+    {
+      "id": "MOD-05",
+      "name": "Customs Valuation",
+      "type": "rules_engine",
+      "aliases": [
+        "القيمة الجمركية",
+        "تقييم القيمة",
+        "التقييم الجمركي",
+        "customs valuation",
+        "valuation engine"
+      ],
+      "description": "تقييم القيمة الجمركية وربطها ببيانات المعاملة."
+    },
+    {
+      "id": "MOD-06",
+      "name": "Risk Management",
+      "type": "rules_engine",
+      "aliases": [
+        "إدارة المخاطر",
+        "تقييم المخاطر",
+        "محرك المخاطر",
+        "risk management",
+        "risk engine",
+        "risk assessment"
+      ],
+      "description": "تقييم مؤشرات المخاطر وتحديد مستوى المراجعة المطلوب."
+    },
+    {
+      "id": "MOD-07",
+      "name": "Selectivity Management",
+      "type": "rules_engine",
+      "aliases": [
+        "إدارة الانتقائية",
+        "الانتقائية",
+        "نظام الانتقائية",
+        "selectivity management",
+        "selectivity engine"
+      ],
+      "description": "تحديد مسار المعالجة وفق قواعد الانتقائية."
+    },
+    {
+      "id": "MOD-08",
+      "name": "Inspection Management",
+      "type": "workflow",
+      "aliases": [
+        "إدارة التفتيش",
+        "التفتيش الجمركي",
+        "المعاينة",
+        "inspection management",
+        "customs inspection"
+      ],
+      "description": "تنظيم إجراءات التفتيش والمعاينة ونتائجها."
+    },
+    {
+      "id": "MOD-09",
+      "name": "Customs Payments",
+      "type": "service",
+      "aliases": [
+        "المدفوعات الجمركية",
+        "الدفع الإلكتروني",
+        "الرسوم الجمركية",
+        "customs payments",
+        "payment service"
+      ],
+      "description": "إدارة الرسوم والمدفوعات وحالة السداد."
+    },
+    {
+      "id": "MOD-10",
+      "name": "Manifest Management",
+      "type": "service",
+      "aliases": [
+        "إدارة المنافيست",
+        "بيان الحمولة",
+        "إدارة بيانات الحمولة",
+        "manifest management",
+        "cargo manifest"
+      ],
+      "description": "استقبال وإدارة بيانات الحمولة والمنافيست."
+    },
+    {
+      "id": "MOD-11",
+      "name": "Warehouse Management",
+      "type": "service",
+      "aliases": [
+        "إدارة المستودعات",
+        "المستودعات الجمركية",
+        "البضائع المحجوزة",
+        "warehouse management",
+        "customs warehouse"
+      ],
+      "description": "متابعة البضائع والمستودعات والحالات المرتبطة بها."
+    },
+    {
+      "id": "MOD-12",
+      "name": "Shipping Integration",
+      "type": "integration",
+      "aliases": [
+        "تكامل الشحن",
+        "الخطوط الملاحية",
+        "وكيل الشحن",
+        "shipping integration",
+        "shipping line",
+        "freight forwarder"
+      ],
+      "description": "تبادل بيانات الشحن مع الخطوط الملاحية ووكلاء الشحن."
+    },
+    {
+      "id": "MOD-13",
+      "name": "Government Integration",
+      "type": "integration",
+      "aliases": [
+        "التكامل الحكومي",
+        "الجهات الحكومية",
+        "موافقات الجهات",
+        "government integration",
+        "government agencies",
+        "oga integration"
+      ],
+      "description": "تبادل الطلبات والموافقات مع الجهات الحكومية."
+    },
+    {
+      "id": "MOD-14",
+      "name": "Post Clearance Audit",
+      "type": "workflow",
+      "aliases": [
+        "التدقيق اللاحق",
+        "التدقيق بعد الإفراج",
+        "مراجعة ما بعد التخليص",
+        "post clearance audit",
+        "post clearance"
+      ],
+      "description": "تنفيذ المراجعات والتدقيق بعد إتمام التخليص."
+    },
+    {
+      "id": "MOD-15",
+      "name": "Customs Reporting",
+      "type": "analytics",
+      "aliases": [
+        "التقارير الجمركية",
+        "التقارير الإحصائية",
+        "التقارير الرقابية",
+        "لوحات المؤشرات الجمركية",
+        "customs reporting",
+        "customs dashboard",
+        "customs analytics"
+      ],
+      "description": "تجميع البيانات التشغيلية وإنتاج التقارير والمؤشرات."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "MOD-10",
+      "to": "MOD-01",
+      "type": "SUPPLIES_DECLARATION_DATA",
+      "label": "يغذي بيانات البيان",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-02",
+      "type": "VALIDATED_BY",
+      "label": "يخضع للتحقق",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-03",
+      "type": "CONTAINS_ITEMS",
+      "label": "يحتوي الأصناف",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-03",
+      "to": "MOD-04",
+      "type": "CLASSIFIED_BY",
+      "label": "يصنف وفق التعرفة",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-03",
+      "to": "MOD-05",
+      "type": "VALUED_BY",
+      "label": "يخضع لتقييم القيمة",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-06",
+      "type": "ASSESSED_BY",
+      "label": "يخضع لتقييم المخاطر",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-06",
+      "to": "MOD-07",
+      "type": "DRIVES_SELECTIVITY",
+      "label": "يوجه الانتقائية",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-07",
+      "to": "MOD-08",
+      "type": "ROUTES_TO_INSPECTION",
+      "label": "يوجه التفتيش",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-09",
+      "type": "GENERATES_PAYMENT",
+      "label": "ينشئ مستحقات الدفع",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-12",
+      "to": "MOD-10",
+      "type": "SENDS_MANIFEST",
+      "label": "يرسل بيانات الحمولة",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-08",
+      "to": "MOD-11",
+      "type": "UPDATES_WAREHOUSE",
+      "label": "يحدث بيانات المستودع",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-13",
+      "to": "MOD-02",
+      "type": "PROVIDES_EXTERNAL_APPROVALS",
+      "label": "يوفر الموافقات الخارجية",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-02",
+      "to": "MOD-01",
+      "type": "RETURNS_VALIDATION_RESULT",
+      "label": "يعيد نتيجة التحقق",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-14",
+      "type": "AUDITED_AFTER_CLEARANCE",
+      "label": "يخضع للتدقيق اللاحق",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-01",
+      "to": "MOD-15",
+      "type": "FEEDS_REPORTING",
+      "label": "يغذي التقارير",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-09",
+      "to": "MOD-15",
+      "type": "FEEDS_REPORTING",
+      "label": "يغذي التقارير المالية",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-08",
+      "to": "MOD-15",
+      "type": "FEEDS_REPORTING",
+      "label": "يغذي التقارير التشغيلية",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    },
+    {
+      "from": "MOD-14",
+      "to": "MOD-15",
+      "type": "FEEDS_REPORTING",
+      "label": "يغذي التقارير الرقابية",
+      "propagation": true,
+      "evidence": "علاقة افتراضية لأغراض العرض والاختبار فقط"
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "component_count": 15,
+    "relationship_count": 18,
+    "last_updated": "2026-11-10",
+    "provenance": "Synthetic demonstration data; no production system information."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "files": [
+    {
+      "name": "Dummy_BRD_GCC_CUA_Phase2B.docx",
+      "type": "DOCX",
+      "paragraphs": 16,
+      "tables": 1,
+      "requirement_rows": 5,
+      "assessment": "Fictional placeholder: Lorem Ipsum sections and generic Sample requirement 1..5; no actual functional requirements."
+    },
+    {
+      "name": "Dummy_SOW_GCC_CUA_Phase2B.docx",
+      "type": "DOCX",
+      "paragraphs": 16,
+      "tables": 1,
+      "requirement_rows": 5,
+      "assessment": "Fictional placeholder with the same structure/content as the BRD; not an authoritative architecture model."
+    }
+  ],
+  "comparison": "The two documents are near-identical in structure and content. They do not currently form a meaningful change-vs-system-design pair.",
+  "limitations": [
+    "DOCX text extraction may miss images, text boxes, tracked changes, and some embedded content.",
+    "No real architecture is inferred from either uploaded document."
+  ]
+}

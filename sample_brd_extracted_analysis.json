@@ -1,0 +1,39 @@
+{
+  "source_file": "sample_brd.docx",
+  "analysis_type": "rule_based_candidate_extraction",
+  "finding_count": 2,
+  "findings": [
+    {
+      "id": "REQ-001",
+      "source_type": "paragraph",
+      "source_reference": "Paragraph 3",
+      "text": "The system must validate declaration status before release.",
+      "requirement_candidate": true,
+      "business_rule_candidate": true,
+      "potential_components": [
+        "system",
+        "declaration"
+      ],
+      "review_status": "NEEDS_HUMAN_REVIEW"
+    },
+    {
+      "id": "REQ-002",
+      "source_type": "table",
+      "source_reference": "Table 1, Row 2",
+      "text": "Declaration Service | Add status validation",
+      "requirement_candidate": false,
+      "business_rule_candidate": true,
+      "potential_components": [
+        "service",
+        "declaration"
+      ],
+      "review_status": "NEEDS_HUMAN_REVIEW"
+    }
+  ],
+  "limitations": [
+    "This is rule-based extraction, not an AI model.",
+    "Some requirements may be missed or incorrectly classified.",
+    "Component mentions are candidates, not confirmed system impacts.",
+    "Human review is required before using the results for decisions."
+  ]
+}

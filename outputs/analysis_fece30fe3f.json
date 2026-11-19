@@ -1,0 +1,366 @@
+{
+  "application": "NASJ Impact Analyzer",
+  "version": "0.2.0",
+  "repository": {
+    "id": "SYS-DEMO-001",
+    "name": "Synthetic Customs Demo System",
+    "synthetic": true
+  },
+  "repository_is_synthetic": true,
+  "documents": [
+    {
+      "file_name": "Dummy_BRD_GCC_CUA_Phase2B.docx",
+      "extraction": {
+        "file_name": "bf519fb3ab244de19bc7efdc038ed085_Dummy_BRD_GCC_CUA_Phase2B.docx",
+        "file_type": ".docx",
+        "sha256": "6b496d4831ac44c35e0dac1548805275fca0771406fc1e81f73c089bc6cb351a",
+        "item_count": 22,
+        "items": [
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 1",
+            "text": "Dummy BRD - GCC Customs Integration Phase 2B",
+            "style": "Title"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 2",
+            "text": "This is fictional test data created solely for BRD Analyzer testing purposes.",
+            "style": "Normal"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 3",
+            "text": "Executive Summary",
+            "style": "Heading 1"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 4",
+            "text": "Lorem Ipsum test content. Entity: Customs Declaration, Regulatory Certificate, Carrier, Vehicle, AEO, Tariff and Feedback Exchange. All values are fictional.",
+            "style": "Normal"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 5",
+            "text": "Business Requirements",
+            "style": "Heading 1"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 6",
+            "text": "Lorem Ipsum test content. Entity: Customs Declaration, Regulatory Certificate, Carrier, Vehicle, AEO, Tariff and Feedback Exchange. All values are fictional.",
+            "style": "Normal"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 7",
+            "text": "Functional Requirements",
+            "style": "Heading 1"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 8",
+            "text": "Lorem Ipsum test content. Entity: Customs Declaration, Regulatory Certificate, Carrier, Vehicle, AEO, Tariff and Feedback Exchange. All values are fictional.",
+            "style": "Normal"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 9",
+            "text": "Data Entities",
+            "style": "Heading 1"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 10",
+            "text": "Lorem Ipsum test content. Entity: Customs Declaration, Regulatory Certificate, Carrier, Vehicle, AEO, Tariff and Feedback Exchange. All values are fictional.",
+            "style": "Normal"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 11",
+            "text": "Interfaces",
+            "style": "Heading 1"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 12",
+            "text": "Lorem Ipsum test content. Entity: Customs Declaration, Regulatory Certificate, Carrier, Vehicle, AEO, Tariff and Feedback Exchange. All values are fictional.",
+            "style": "Normal"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 13",
+            "text": "Security Requirements",
+            "style": "Heading 1"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 14",
+            "text": "Lorem Ipsum test content. Entity: Customs Declaration, Regulatory Certificate, Carrier, Vehicle, AEO, Tariff and Feedback Exchange. All values are fictional.",
+            "style": "Normal"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 15",
+            "text": "Acceptance Criteria",
+            "style": "Heading 1"
+          },
+          {
+            "kind": "paragraph",
+            "source": "Paragraph 16",
+            "text": "Lorem Ipsum test content. Entity: Customs Declaration, Regulatory Certificate, Carrier, Vehicle, AEO, Tariff and Feedback Exchange. All values are fictional.",
+            "style": "Normal"
+          },
+          {
+            "kind": "table_row",
+            "source": "Table 1, Row 1",
+            "table": 1,
+            "row": 1,
+            "cells": [
+              "ID",
+              "Requirement",
+              "Priority"
+            ],
+            "text": "ID | Requirement | Priority"
+          },
+          {
+            "kind": "table_row",
+            "source": "Table 1, Row 2",
+            "table": 1,
+            "row": 2,
+            "cells": [
+              "REQ-001",
+              "Sample requirement 1 for analyzer testing",
+              "High"
+            ],
+            "text": "REQ-001 | Sample requirement 1 for analyzer testing | High"
+          },
+          {
+            "kind": "table_row",
+            "source": "Table 1, Row 3",
+            "table": 1,
+            "row": 3,
+            "cells": [
+              "REQ-002",
+              "Sample requirement 2 for analyzer testing",
+              "High"
+            ],
+            "text": "REQ-002 | Sample requirement 2 for analyzer testing | High"
+          },
+          {
+            "kind": "table_row",
+            "source": "Table 1, Row 4",
+            "table": 1,
+            "row": 4,
+            "cells": [
+              "REQ-003",
+              "Sample requirement 3 for analyzer testing",
+              "High"
+            ],
+            "text": "REQ-003 | Sample requirement 3 for analyzer testing | High"
+          },
+          {
+            "kind": "table_row",
+            "source": "Table 1, Row 5",
+            "table": 1,
+            "row": 5,
+            "cells": [
+              "REQ-004",
+              "Sample requirement 4 for analyzer testing",
+              "High"
+            ],
+            "text": "REQ-004 | Sample requirement 4 for analyzer testing | High"
+          },
+          {
+            "kind": "table_row",
+            "source": "Table 1, Row 6",
+            "table": 1,
+            "row": 6,
+            "cells": [
+              "REQ-005",
+              "Sample requirement 5 for analyzer testing",
+              "High"
+            ],
+            "text": "REQ-005 | Sample requirement 5 for analyzer testing | High"
+          }
+        ],
+        "text_characters": 1682,
+        "limitations": [
+          "Images, text boxes and tracked-change markup may not be extracted."
+        ]
+      },
+      "analysis": {
+        "document": "bf519fb3ab244de19bc7efdc038ed085_Dummy_BRD_GCC_CUA_Phase2B.docx",
+        "sha256": "6b496d4831ac44c35e0dac1548805275fca0771406fc1e81f73c089bc6cb351a",
+        "findings": [
+          {
+            "id": "REQ-001",
+            "source": "Table 1, Row 2",
+            "kind": "requirement_candidate",
+            "text": "Sample requirement 1 for analyzer testing",
+            "original_row": [
+              "REQ-001",
+              "Sample requirement 1 for analyzer testing",
+              "High"
+            ],
+            "priority": "High",
+            "candidate": true,
+            "flags": [
+              "explicit_requirement_id",
+              "template_or_placeholder_text"
+            ],
+            "confidence": 0.15,
+            "review_status": "needs_human_review",
+            "placeholder_warning": true
+          },
+          {
+            "id": "REQ-002",
+            "source": "Table 1, Row 3",
+            "kind": "requirement_candidate",
+            "text": "Sample requirement 2 for analyzer testing",
+            "original_row": [
+              "REQ-002",
+              "Sample requirement 2 for analyzer testing",
+              "High"
+            ],
+            "priority": "High",
+            "candidate": true,
+            "flags": [
+              "explicit_requirement_id",
+              "template_or_placeholder_text"
+            ],
+            "confidence": 0.15,
+            "review_status": "needs_human_review",
+            "placeholder_warning": true
+          },
+          {
+            "id": "REQ-003",
+            "source": "Table 1, Row 4",
+            "kind": "requirement_candidate",
+            "text": "Sample requirement 3 for analyzer testing",
+            "original_row": [
+              "REQ-003",
+              "Sample requirement 3 for analyzer testing",
+              "High"
+            ],
+            "priority": "High",
+            "candidate": true,
+            "flags": [
+              "explicit_requirement_id",
+              "template_or_placeholder_text"
+            ],
+            "confidence": 0.15,
+            "review_status": "needs_human_review",
+            "placeholder_warning": true
+          },
+          {
+            "id": "REQ-004",
+            "source": "Table 1, Row 5",
+            "kind": "requirement_candidate",
+            "text": "Sample requirement 4 for analyzer testing",
+            "original_row": [
+              "REQ-004",
+              "Sample requirement 4 for analyzer testing",
+              "High"
+            ],
+            "priority": "High",
+            "candidate": true,
+            "flags": [
+              "explicit_requirement_id",
+              "template_or_placeholder_text"
+            ],
+            "confidence": 0.15,
+            "review_status": "needs_human_review",
+            "placeholder_warning": true
+          },
+          {
+            "id": "REQ-005",
+            "source": "Table 1, Row 6",
+            "kind": "requirement_candidate",
+            "text": "Sample requirement 5 for analyzer testing",
+            "original_row": [
+              "REQ-005",
+              "Sample requirement 5 for analyzer testing",
+              "High"
+            ],
+            "priority": "High",
+            "candidate": true,
+            "flags": [
+              "explicit_requirement_id",
+              "template_or_placeholder_text"
+            ],
+            "confidence": 0.15,
+            "review_status": "needs_human_review",
+            "placeholder_warning": true
+          }
+        ],
+        "finding_count": 5,
+        "placeholder_content_detected": true,
+        "quality_note": "Candidate extraction is heuristic; review every finding and source excerpt."
+      },
+      "impact_analysis": {
+        "repository": {
+          "id": "SYS-DEMO-001",
+          "name": "Synthetic Customs Demo System",
+          "synthetic": true
+        },
+        "repository_is_synthetic": true,
+        "semantics": "Only relationships with propagate_impact=true are traversed, source -> target. These are candidate graph paths, not confirmed production impacts.",
+        "results": [
+          {
+            "finding_id": "REQ-001",
+            "source": "Table 1, Row 2",
+            "finding_text": "Sample requirement 1 for analyzer testing",
+            "matches": [],
+            "matched_components": [],
+            "unmatched_or_uncertain": true,
+            "candidate_impacts": [],
+            "review_required": true
+          },
+          {
+            "finding_id": "REQ-002",
+            "source": "Table 1, Row 3",
+            "finding_text": "Sample requirement 2 for analyzer testing",
+            "matches": [],
+            "matched_components": [],
+            "unmatched_or_uncertain": true,
+            "candidate_impacts": [],
+            "review_required": true
+          },
+          {
+            "finding_id": "REQ-003",
+            "source": "Table 1, Row 4",
+            "finding_text": "Sample requirement 3 for analyzer testing",
+            "matches": [],
+            "matched_components": [],
+            "unmatched_or_uncertain": true,
+            "candidate_impacts": [],
+            "review_required": true
+          },
+          {
+            "finding_id": "REQ-004",
+            "source": "Table 1, Row 5",
+            "finding_text": "Sample requirement 4 for analyzer testing",
+            "matches": [],
+            "matched_components": [],
+            "unmatched_or_uncertain": true,
+            "candidate_impacts": [],
+            "review_required": true
+          },
+          {
+            "finding_id": "REQ-005",
+            "source": "Table 1, Row 6",
+            "finding_text": "Sample requirement 5 for analyzer testing",
+            "matches": [],
+            "matched_components": [],
+            "unmatched_or_uncertain": true,
+            "candidate_impacts": [],
+            "review_required": true
+          }
+        ],
+        "warnings": []
+      }
+    }
+  ]
+}

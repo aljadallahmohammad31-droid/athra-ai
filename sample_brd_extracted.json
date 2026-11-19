@@ -1,0 +1,43 @@
+{
+  "source_file": "sample_brd.docx",
+  "paragraph_count": 3,
+  "table_count": 1,
+  "paragraphs": [
+    {
+      "paragraph_number": 1,
+      "style": "Title",
+      "text": "Customs System - BRD"
+    },
+    {
+      "paragraph_number": 2,
+      "style": "Heading 1",
+      "text": "1. Business Requirement"
+    },
+    {
+      "paragraph_number": 3,
+      "style": "Normal",
+      "text": "The system must validate declaration status before release."
+    }
+  ],
+  "tables": [
+    {
+      "table_number": 1,
+      "rows": [
+        {
+          "row_number": 1,
+          "cells": [
+            "Component",
+            "Change"
+          ]
+        },
+        {
+          "row_number": 2,
+          "cells": [
+            "Declaration Service",
+            "Add status validation"
+          ]
+        }
+      ]
+    }
+  ]
+}
