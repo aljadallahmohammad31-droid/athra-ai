@@ -57,8 +57,8 @@ except Exception:
 
 DATA = ROOT / "data"
 PORT = int(os.environ.get("NASJ_PORT", "8765"))
-DEFAULT_GEMINI_MODEL = "gemini-3.5-flash"
-
+# DEFAULT_GEMINI_MODEL = "gemini-3.5-flash"
+DEFAULT_GEMINI_MODEL = "gemini-1.5-flash"
 
 def load_repo() -> dict:
     return json.loads((DATA / "system_knowledge.json").read_text(encoding="utf-8"))
@@ -270,8 +270,7 @@ def resolve_gemini_model() -> str:
 
 
 def call_gemini(payload: dict) -> dict:
-    # api_key = os.environ.get("GEMINI_API_KEY", "").strip()
-    api_key = "AQ.Ab8RN6K-zAZMCUPkZRjs3vdbVQgejGKSwWOgY-Sv7wo8p-P8yw"
+    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not api_key:
         raise RuntimeError(
             "Gemini is not configured. Set the GEMINI_API_KEY environment variable and restart ATHRA."
@@ -343,7 +342,9 @@ def call_gemini(payload: dict) -> dict:
     encoded_body = json.dumps(request_body, ensure_ascii=False).encode("utf-8")
 
     fallback_models = [model]
-    for candidate_model in ("gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.5-pro"):
+    for candidate_model in ("gemini-3.5-flash","gemini-1.5-flash", "gemini-1.5-pro",
+                              
+                            "gemini-3.5-flash-lite", "gemini-3.5-pro"):
         if candidate_model not in fallback_models:
             fallback_models.append(candidate_model)
 
@@ -520,6 +521,13 @@ class Handler(BaseHTTPRequestHandler):
         pass
 
 
+# if __name__ == "__main__":
+#     print(f"Impact Analyzer running locally at: http://127.0.0.1:{PORT}")
+#     HTTPServer(("127.0.0.1", PORT), Handler).serve_forever()
+
+PORT = int(os.environ.get("PORT", os.environ.get("NASJ_PORT", "8765")))
+
 if __name__ == "__main__":
-    print(f"Impact Analyzer running locally at: http://127.0.0.1:{PORT}")
-    HTTPServer(("127.0.0.1", PORT), Handler).serve_forever()
+    print(f"Impact Analyzer running at port: {PORT}")
+    HTTPServer(("0.0.0.0", PORT), Handler).serve_forever()
+
